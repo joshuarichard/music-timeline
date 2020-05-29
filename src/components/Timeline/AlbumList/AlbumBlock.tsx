@@ -18,15 +18,13 @@ class AlbumBlock extends React.Component<Props, {}> {
     const Contain = styled.div`
       display: flex;
       flex-direction: row;
-      align-items: flex-start;
-      flex-wrap: wrap;
+      align-items: stretch;
       padding-top: 1rem;
       /* background-color: ${parseInt(this.props.year) % 2 === 0 ? 'red' : 'blue'} */
     `;
 
     const AlbumContain = styled.div`
       display: flex;
-      flex-grow: 2;
       flex-direction: row;
       justify-content: flex-start;
       flex-wrap: wrap;
@@ -34,7 +32,8 @@ class AlbumBlock extends React.Component<Props, {}> {
 
     const Year = styled.div`
       width: 10rem;
-      margin: 0 0 3em 0;
+      flex-shrink: 0;
+      margin: 1rem 0 3em 0;
       padding: 0;
       align-items: center;
       justify-content: center;

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Line from './Line';
 import AlbumList from './AlbumList';
 import AlbumType from '../../types/Album';
 

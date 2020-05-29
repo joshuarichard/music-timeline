@@ -14,6 +14,7 @@ class Album extends React.Component<{album: AlbumType}> {
       height: 10rem;
       width: 10rem;
       margin-right: 1rem;
+      margin-top: 1rem;
     `;
 
     const Img = styled.img`
