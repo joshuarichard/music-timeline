@@ -13,8 +13,8 @@ $ npm i
 Make sure there's a configuration file located at `src/config.json`. It should have two keys in it:
 ```json
 {
-  "MUSIC_TIMELINE_AIRTABLE_API_KEY": <api_key_here>,
-  "MUSIC_TIMELINE_AIRTABLE_BASE_ID": <base_id_here>
+  "MUSIC_TIMELINE_AIRTABLE_API_KEY": "<api_key_here>",
+  "MUSIC_TIMELINE_AIRTABLE_BASE_ID": "<base_id_here>"
 }
 ```
 Then run it:
