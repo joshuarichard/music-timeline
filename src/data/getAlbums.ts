@@ -12,7 +12,7 @@ const base = new Airtable({
 const getAlbums = () => {
   return base("albums")
     .select({
-      maxRecords: 50,
+      maxRecords: 100,
       view: "Grid view",
     })
     .all()
