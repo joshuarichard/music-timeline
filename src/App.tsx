@@ -1,11 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import './App.css';
-
 import { Timeline } from './components';
 import AlbumType from './types/Album';
-
-import getAlbums from './data/getAlbums';
+import { getAlbums } from './data';
 
 type Props = {};
 

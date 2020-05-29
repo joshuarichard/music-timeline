@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import { Contain } from './components';
 import AlbumBlock from './AlbumBlock';
 import AlbumType from '../../../types/Album';
 
@@ -9,18 +9,7 @@ type Props = {
 
 class AlbumList extends React.Component<Props, {}> {
 
-  constructor(props: Props) {
-    super(props);
-  }
-
   render() {
-    const Contain = styled.div`
-      min-height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-    `;
-
     const { albums } = this.props;
 
     /**
@@ -38,7 +27,10 @@ class AlbumList extends React.Component<Props, {}> {
      *   [year: string]: AlbumType[];
      * }
      */
+    // first, get all uniq years
     const years = uniq(albums.map(a => a.year));
+
+    // then, reduce those years into the object in question
     const albumsByYear = years.reduce((acc: {
       [key: string]: AlbumType[];
     }, cur: string) => {
@@ -46,6 +38,7 @@ class AlbumList extends React.Component<Props, {}> {
       return acc;
     }, {});
 
+    // finally, sort those years in descending order
     const yearsSorted = Object.keys(albumsByYear).sort((a, b) => (parseInt(b) - parseInt(a)));
 
     return (
