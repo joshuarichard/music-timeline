@@ -24,12 +24,14 @@ class App extends React.Component<Props, State> {
 
   render() {
     const Contain = styled.div`
-      background-color: #2c2c2e;
-      min-height: 100vh;
+      background-color: white;
+      min-height: 100%;
       display: flex;
+      margin-left: 6em;
+      margin-right: 6em;
       flex-direction: column;
       font-size: calc(10px + 2vmin);
-      color: white;
+      color: black;
     `;
 
     const { albums } = this.state;

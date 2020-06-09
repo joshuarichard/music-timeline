@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Right = styled.div`
+const Column = styled.div`
   flex-grow: 5;
   width: 100%;
   padding: 0.8em 1.2em;
@@ -8,4 +8,4 @@ const Right = styled.div`
   list-style: none;
 `;
 
-export default Right;
+export default Column;

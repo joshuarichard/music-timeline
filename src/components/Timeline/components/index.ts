@@ -1,5 +1,4 @@
 import Contain from './Contain';
-import Left from './Left';
-import Right from './Right';
+import Column from './Column';
 
-export { Contain, Left, Right };
+export { Contain, Column };

@@ -14,6 +14,7 @@ const ImgMeta = styled.div`
   display: none;
   align-items: center;
   justify-content: center;
+  text-align: center;
   position: absolute;
   background-color: rgba(0, 0, 0, .3);
   top: 0;

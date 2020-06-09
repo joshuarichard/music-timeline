@@ -1,5 +1,5 @@
 import React from 'react';
-import { Contain, Left, Right } from './components';
+import { Contain, Column } from './components';
 import AlbumList from './AlbumList';
 import AlbumType from '../../types/Album';
 
@@ -14,10 +14,9 @@ class Timeline extends React.Component<Props, {}> {
 
     return (
       <Contain>
-        <Left/>
-        <Right>
+        <Column>
           <AlbumList albums={albums}/>
-        </Right>
+        </Column>
       </Contain>
     );
   }
