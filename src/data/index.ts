@@ -1,3 +1,3 @@
-import getAlbums from './getAlbums';
+import getAlbumsAndArtists from './getAlbumsAndArtists';
 
-export { getAlbums };
+export { getAlbumsAndArtists };

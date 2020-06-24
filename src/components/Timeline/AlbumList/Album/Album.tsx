@@ -8,12 +8,20 @@ import {
   ArtistOverlay,
   YearOverlay,
 } from './components';
-import AlbumType from '../../../../types/Album';
+import { Album as AlbumType, Artist } from '../../../../types';
 
-class Album extends React.Component<{album: AlbumType}> {
+type Props = {
+  album: AlbumType;
+  artists: Artist[];
+};
+
+class Album extends React.Component<Props> {
   
   render() {
-    const { album } = this.props;
+    const { album, artists } = this.props;
+    const artistId = album.artist[0];
+
+    console.log();
 
     return (
       <Contain>
@@ -21,7 +29,7 @@ class Album extends React.Component<{album: AlbumType}> {
           <Img src={album.img} alt={album.name}/>
           <ImgMeta>
             <AlbumOverlay>{album.name}</AlbumOverlay>
-            <ArtistOverlay>{album.artist}</ArtistOverlay>
+            <ArtistOverlay>{artists.find((artist) => artist.id === artistId)?.name}</ArtistOverlay>
             {
               (album.year !== album.year_released)
                 ? <YearOverlay>Released {album.year_released}</YearOverlay>

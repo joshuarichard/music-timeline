@@ -1,21 +1,22 @@
 import React from 'react';
 import { Contain, Column } from './components';
 import AlbumList from './AlbumList';
-import AlbumType from '../../types/Album';
+import { Album, Artist } from '../../types';
 
 type Props = {
-  albums: AlbumType[]
+  albums: Album[]
+  artists: Artist[]
 };
 
 class Timeline extends React.Component<Props, {}> {
 
   render() {
-    const { albums } = this.props;
+    const { albums, artists } = this.props;
 
     return (
       <Contain>
         <Column>
-          <AlbumList albums={albums}/>
+          <AlbumList albums={albums} artists={artists}/>
         </Column>
       </Contain>
     );

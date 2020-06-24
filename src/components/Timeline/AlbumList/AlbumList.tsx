@@ -1,25 +1,20 @@
 import React from 'react';
 import { Contain } from './components';
+import utils from '../../../utils';
 import AlbumBlock from './AlbumBlock';
-import AlbumType from '../../../types/Album';
+import { Album, Artist } from '../../../types';
+
+const { uniq } = utils.array;
 
 type Props = {
-  albums: AlbumType[]
+  albums: Album[];
+  artists: Artist[];
 };
 
 class AlbumList extends React.Component<Props, {}> {
 
   render() {
-    const { albums } = this.props;
-
-    /**
-     * uniq(arr)
-     * dedupe arrays
-     * 
-     * @param arr: string[]
-     * @returns arr: string[]
-     */
-    const uniq = (arr: string[]) => arr.filter((a, i) => arr.indexOf(a) === i);
+    const { albums, artists } = this.props;
 
     /**
      * Build an object of all albums grouped by year in the form:
@@ -32,7 +27,7 @@ class AlbumList extends React.Component<Props, {}> {
 
     // then, reduce those years into the object in question
     const albumsByYear = years.reduce((acc: {
-      [key: string]: AlbumType[];
+      [key: string]: Album[];
     }, cur: string) => {
       acc[cur] = albums.filter(a => a.year === cur);
       return acc;
@@ -48,6 +43,7 @@ class AlbumList extends React.Component<Props, {}> {
             <AlbumBlock
               key={index}
               year={year}
+              artists={artists}
               albums={albumsByYear[year]}
             />
           ))

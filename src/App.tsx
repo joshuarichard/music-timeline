@@ -1,27 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Timeline } from './components';
-import AlbumType from './types/Album';
-import { getAlbums } from './data';
-import RobotoThin from "./fonts/Roboto/Roboto-Thin.ttf";
-import RobotoRegular from "./fonts/Roboto/Roboto-Regular.ttf";
+import { Artist, Album } from './types';
+import { getAlbumsAndArtists } from './data';
+import RobotoThin from './fonts/Roboto/Roboto-Thin.ttf';
+import RobotoRegular from './fonts/Roboto/Roboto-Regular.ttf';
 
 type Props = {};
 
 type State = {
-  albums: AlbumType[]
+  albums: Album[],
+  artists: Artist[],
 };
 
 class App extends React.Component<Props, State> {
 
   constructor(props: Props) {
     super(props);
-    this.state = { albums: [] };
+    this.state = { albums: [], artists: [] };
   }
 
   async componentWillMount() {
-    const albums = await getAlbums();
-    this.setState({ albums });
+    const data = await getAlbumsAndArtists();
+    this.setState({
+      albums: data.albums,
+      artists: data.artists,
+    });
   }
 
   render() {
@@ -76,11 +80,11 @@ class App extends React.Component<Props, State> {
       }
     `;
 
-    const { albums } = this.state;
+    const { albums, artists } = this.state;
 
     return (
       <Contain>
-        <Timeline albums={albums}/>
+        <Timeline albums={albums} artists={artists}/>
         <Footer>
           <Link href="http://joshuarichard.co">joshuarichard.co</Link>
           <FooterFooter>

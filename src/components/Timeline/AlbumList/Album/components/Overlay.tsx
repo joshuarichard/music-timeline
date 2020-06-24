@@ -11,6 +11,7 @@ const ArtistOverlay = styled.div`
   font-size: small;
   margin-left: .2em;
   margin-right: .2em;
+  font-family: RobotoRegular;
 `;
 
 const YearOverlay = styled.div`

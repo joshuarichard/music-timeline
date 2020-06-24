@@ -1,6 +1,7 @@
 interface Album {
+  id: string,
   name: string,
-  artist: string,
+  artist: string[],
   year: string,
   img?: string,
   color?: string,

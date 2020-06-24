@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import Album from '../Album';
-import AlbumType from '../../../../types/Album';
+import { Album as AlbumType, Artist as ArtistType } from '../../../../types';
 
 type Props = {
   year: string;
   albums: AlbumType[];
+  artists: ArtistType[];
 };
 
 const Contain = styled.div`
@@ -22,7 +23,6 @@ const Year = styled.div`
   padding: 0;
   align-items: center;
   justify-content: center;
-  font-family: RobotoRegular;
 `;
 
 const AlbumContain = styled.div`
@@ -35,13 +35,13 @@ const AlbumContain = styled.div`
 class AlbumBlock extends React.Component<Props, {}> {
 
   render() {
-    const { year, albums } = this.props;
+    const { year, albums, artists } = this.props;
 
     return (
       <Contain>
         <Year>{year}</Year>
         <AlbumContain>
-          {albums.map((a, i) => <Album key={i} album={a}/>)}
+          {albums.map((a, i) => <Album key={i} album={a} artists={artists}/>)}
         </AlbumContain>
       </Contain>
     );
