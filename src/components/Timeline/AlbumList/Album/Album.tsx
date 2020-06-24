@@ -21,15 +21,17 @@ class Album extends React.Component<Props> {
     const { album, artists } = this.props;
     const artistId = album.artist[0];
 
-    console.log();
-
     return (
       <Contain>
         <ImgHref href={album.url}>
           <Img src={album.img} alt={album.name}/>
           <ImgMeta>
             <AlbumOverlay>{album.name}</AlbumOverlay>
-            <ArtistOverlay>{artists.find((artist) => artist.id === artistId)?.name}</ArtistOverlay>
+            <ArtistOverlay>
+              {
+                artists.find((artist) => artist.id === artistId)?.name
+              }
+            </ArtistOverlay>
             {
               (album.year !== album.year_released)
                 ? <YearOverlay>Released {album.year_released}</YearOverlay>

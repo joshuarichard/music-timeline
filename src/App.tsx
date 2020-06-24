@@ -32,8 +32,8 @@ class App extends React.Component<Props, State> {
     const Contain = styled.div`
       min-height: 100%;
       display: flex;
-      margin-left: 6em;
-      margin-right: 6em;
+      margin-left: 1em;
+      margin-right: 1em;
       flex-direction: column;
       font-size: calc(10px + 2vmin);
       color: black;
@@ -89,7 +89,7 @@ class App extends React.Component<Props, State> {
           <Link href="http://joshuarichard.co">joshuarichard.co</Link>
           <FooterFooter>
             the data lives
-            <Link href="https://airtable.com/shryGCMTZnxQtE8t5">
+            <Link href="https://airtable.com/shrw9SwbhTeqzBi4T">
               &nbsp;here&nbsp;
             </Link>
             and the source code lives
