@@ -1,24 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Timeline } from './components';
-import AlbumType from './types/Album';
+import { Album } from './types';
 import { getAlbums } from './data';
+import getArtists from './data/getArtists';
 
 type Props = {};
 
 type State = {
-  albums: AlbumType[]
+  albums: Album[];
 };
 
 class App extends React.Component<Props, State> {
-
   constructor(props: Props) {
     super(props);
-    this.state = { albums: [] };
+    this.state = {
+      albums: [],
+    };
   }
 
   async componentWillMount() {
-    const albums = await getAlbums();
+    const artists = await getArtists();
+    const albums = (await getAlbums()).map((album) => ({
+      ...album,
+      // eslint-disable-next-line
+      artist: artists.find((a) => a.id == album.artist)?.name,
+    }));
     this.setState({ albums });
   }
 
@@ -38,7 +45,7 @@ class App extends React.Component<Props, State> {
 
     return (
       <Contain>
-        <Timeline albums={albums}/>
+        <Timeline albums={albums} />
       </Contain>
     );
   }

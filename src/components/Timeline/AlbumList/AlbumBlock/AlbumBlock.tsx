@@ -1,7 +1,7 @@
 import React from 'react';
 import { Contain, AlbumContain, Year } from './components';
 import Album from '../Album';
-import AlbumType from '../../../../types/Album';
+import { Album as AlbumType } from '../../../../types';
 
 type Props = {
   year: string;
@@ -9,7 +9,6 @@ type Props = {
 };
 
 class AlbumBlock extends React.Component<Props, {}> {
-
   render() {
     const { year, albums } = this.props;
 
@@ -17,12 +16,13 @@ class AlbumBlock extends React.Component<Props, {}> {
       <Contain>
         <Year>{year}</Year>
         <AlbumContain>
-          {albums.map((a, i) => <Album key={i} album={a}/>)}
+          {albums.map((a, i) => (
+            <Album key={i} album={a} />
+          ))}
         </AlbumContain>
       </Contain>
     );
   }
-
-};
+}
 
 export default AlbumBlock;

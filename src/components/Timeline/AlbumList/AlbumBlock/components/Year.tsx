@@ -7,7 +7,7 @@ const Year = styled.div`
   padding: 0;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
+  font-weight: lighter;
 `;
 
 export default Year;
