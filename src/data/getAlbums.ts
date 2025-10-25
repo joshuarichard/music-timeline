@@ -1,4 +1,5 @@
 import Airtable from 'airtable';
+
 import { Album } from '../types/Album';
 import * as config from '../config.json';
 

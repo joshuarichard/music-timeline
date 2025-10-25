@@ -1,4 +1,5 @@
 import Airtable from 'airtable';
+
 import { Artist } from '../types/Artist';
 import * as config from '../config.json';
 

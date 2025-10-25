@@ -1,11 +1,19 @@
 import React from 'react';
-import { Contain } from './components';
+import styled from 'styled-components';
+
 import AlbumBlock from './AlbumBlock';
 import { Album } from '../../../types';
 
 type Props = {
   albums: Album[];
 };
+
+const Contain = styled.div`
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+`;
 
 class AlbumList extends React.Component<Props, {}> {
   render() {
@@ -37,8 +45,6 @@ class AlbumList extends React.Component<Props, {}> {
 
     // finally, sort those years in descending order
     const yearsSorted = Object.keys(albumsByYear).sort((a, b) => parseInt(b) - parseInt(a));
-
-    console.log(yearsSorted);
 
     return (
       <Contain>

@@ -1,11 +1,24 @@
 import React from 'react';
-import { Contain, Column } from './components';
+import styled from 'styled-components';
+
 import AlbumList from './AlbumList';
 import { Album } from '../../types';
 
 type Props = {
   albums: Album[];
 };
+
+const Contain = styled.div`
+  display: flex;
+`;
+
+const Column = styled.div`
+  flex-grow: 5;
+  width: 100%;
+  padding: 0.8em 1.2em;
+  overflow: hidden;
+  list-style: none;
+`;
 
 class Timeline extends React.Component<Props, {}> {
   render() {
